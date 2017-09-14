@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "jjoo.app"
-               BlueprintName = "jjoo"
+               BlueprintIdentifier = "4D6775761F6ADDC000A9BC09"
+               BuildableName = "Save To.app"
+               BlueprintName = "Save To"
                ReferencedContainer = "container:jjoo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,13 +28,33 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4D6775891F6ADDC000A9BC09"
+               BuildableName = "Save ToTests.xctest"
+               BlueprintName = "Save ToTests"
+               ReferencedContainer = "container:jjoo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4D6775941F6ADDC000A9BC09"
+               BuildableName = "Save ToUITests.xctest"
+               BlueprintName = "Save ToUITests"
+               ReferencedContainer = "container:jjoo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "jjoo.app"
-            BlueprintName = "jjoo"
+            BlueprintIdentifier = "4D6775761F6ADDC000A9BC09"
+            BuildableName = "Save To.app"
+            BlueprintName = "Save To"
             ReferencedContainer = "container:jjoo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +75,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "jjoo.app"
-            BlueprintName = "jjoo"
+            BlueprintIdentifier = "4D6775761F6ADDC000A9BC09"
+            BuildableName = "Save To.app"
+            BlueprintName = "Save To"
             ReferencedContainer = "container:jjoo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +94,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "jjoo.app"
-            BlueprintName = "jjoo"
+            BlueprintIdentifier = "4D6775761F6ADDC000A9BC09"
+            BuildableName = "Save To.app"
+            BlueprintName = "Save To"
             ReferencedContainer = "container:jjoo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

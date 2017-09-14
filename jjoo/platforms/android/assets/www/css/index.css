@@ -69,6 +69,7 @@ body {
     margin-bottom:10%;
 }
 .button {
+    pointer-events: none;
     background-color: transparent;
     border: 1px solid #02a2db;
     border-radius: 10px;
