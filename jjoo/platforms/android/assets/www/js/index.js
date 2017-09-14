@@ -28,7 +28,7 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        document.addEventListener("click",app.takeImage);
+        document.getElementById('takePicture').addEventListener("click",app.takeImage);
     },
 
     // Update DOM on a Received Event
@@ -38,9 +38,9 @@ var app = {
         var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+        // receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        // console.log('Received Event: ' + id);
     },
     takeImage: function(){
         navigator.camera.getPicture(app.onSuccess, app.onFail, { quality: 100,
