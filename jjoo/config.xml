@@ -11,6 +11,7 @@
     <preference name="AndroidExtraFilesystems" value="files,cache, sdcard, cache-external, files-external" />
     <content src="index.html" />
     <access origin="*" />
+    <icon src="icon.png">
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
