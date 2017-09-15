@@ -39,6 +39,7 @@ var app = {
           });
 
           function onSuccessCallback(entries){
+            // alert(JSON.stringify(entries,null,4));
                for (i=0; i<entries.length; i++) {
                    var row = entries[i];
                    var html = '';
@@ -58,11 +59,12 @@ var app = {
           function onFailCallback(e){
             alert(e);
           }
-        };
+        }
 
         function getFilepath(thefilepath){
                 alert(thefilepath);
-        };
+        }
+        listPath('file:///storage/emulated/0');
     },
 
     // Update DOM on a Received Event
