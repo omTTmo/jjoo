@@ -21,7 +21,6 @@ var app = {
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
-
     // deviceready Event Handler
     //
     // Bind any cordova events here. Common events are:
@@ -30,6 +29,8 @@ var app = {
         this.receivedEvent('deviceready');
         document.getElementById('takePicture').addEventListener("click",app.takeImage);
         document.getElementById('browse').addEventListener("click",app.browseFolder);
+        document.getElementById('work').addEventListener("click",app.setFolderQuick);
+        document.getElementById('private').addEventListener("click",app.setFolderQuick);
     },
     browseFolder: function() {
          var path = cordova.file.externalRootDirectory;
@@ -134,6 +135,9 @@ var app = {
 
     resolveOnError: function(error){
         alert("Error" + error);
+    },
+    setFolderQuick: function() {
+        localStorage.setItem("saveFolder", "jjoo/"+this.getAttribute('id'));
     }
 };
 
