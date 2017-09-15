@@ -31,6 +31,7 @@ var app = {
         document.getElementById('browse').addEventListener("click",app.browseFolder);
         document.getElementById('work').addEventListener("click",app.setFolderQuick);
         document.getElementById('private').addEventListener("click",app.setFolderQuick);
+        localStorage.setItem("saveFolder");
     },
     browseFolder: function() {
          var path = cordova.file.externalRootDirectory;
