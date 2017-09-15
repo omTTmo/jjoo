@@ -23,6 +23,10 @@
                         {
                             "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -67,6 +71,9 @@
             "PACKAGE_NAME": "com.unfu.jjoo"
         },
         "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.unfu.jjoo"
+        },
+        "cordova-plugin-vibration": {
             "PACKAGE_NAME": "com.unfu.jjoo"
         }
     },
@@ -284,6 +291,15 @@
             "merges": [
                 "navigator.notification"
             ]
+        },
+        {
+            "id": "cordova-plugin-vibration.notification",
+            "file": "plugins/cordova-plugin-vibration/www/vibration.js",
+            "pluginId": "cordova-plugin-vibration",
+            "merges": [
+                "navigator.notification",
+                "navigator"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -291,6 +307,7 @@
         "cordova-plugin-compat": "1.1.0",
         "cordova-plugin-file": "4.3.3",
         "cordova-plugin-camera": "2.4.1",
-        "cordova-plugin-dialogs": "1.3.3"
+        "cordova-plugin-dialogs": "1.3.3",
+        "cordova-plugin-vibration": "2.1.5"
     }
 }

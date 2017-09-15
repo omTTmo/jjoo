@@ -137,7 +137,9 @@ var app = {
         alert("Error" + error);
     },
     setFolderQuick: function() {
+        navigator.vibrate(200);
         localStorage.setItem("saveFolder", "jjoo/"+this.getAttribute('id'));
+        app.takeImage();
     }
 };
 

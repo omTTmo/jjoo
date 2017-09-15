@@ -32,6 +32,7 @@
 		53920F7545374D05850EC977 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4178F782C5244A57B86D93F8 /* CDVNotification.m */; };
 		3635702947F24B8DB9EF2BA2 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59F3C16559E04D3EBB257F54 /* CDVNotification.bundle */; };
 		2C5B81A4D2204F19A2AD7420 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3732A9871543CD92A9C803 /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1DBF04C4600D42778CD82575 /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7922800632B64BBBA4330FB3 /* CDVVibration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,8 @@
 		55B9009B72E3420CA99CBB33 /* CDVNotification.h */ = {isa = PBXFileReference; name = "CDVNotification.h"; path = "cordova-plugin-dialogs/CDVNotification.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		59F3C16559E04D3EBB257F54 /* CDVNotification.bundle */ = {isa = PBXFileReference; name = "CDVNotification.bundle"; path = "CDVNotification.bundle"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.plug-in; explicitFileType = undefined; includeInIndex = 0; };
 		3D3732A9871543CD92A9C803 /* AudioToolbox.framework */ = {isa = PBXFileReference; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		7922800632B64BBBA4330FB3 /* CDVVibration.m */ = {isa = PBXFileReference; name = "CDVVibration.m"; path = "cordova-plugin-vibration/CDVVibration.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		DB7684F1D1494728AFE6D66C /* CDVVibration.h */ = {isa = PBXFileReference; name = "CDVVibration.h"; path = "cordova-plugin-vibration/CDVVibration.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +284,8 @@
 				94CC3B0163044044B990FFB8 /* CDVExif.h */,
 				4178F782C5244A57B86D93F8 /* CDVNotification.m */,
 				55B9009B72E3420CA99CBB33 /* CDVNotification.h */,
+				7922800632B64BBBA4330FB3 /* CDVVibration.m */,
+				DB7684F1D1494728AFE6D66C /* CDVVibration.h */,
 			);
 			name = Plugins;
 			path = jjoo/Plugins;
@@ -537,6 +542,7 @@
 				AA69B485897F447EADA6EDA2 /* CDVCamera.m in Sources */,
 				205F301A6784452483D16CCC /* CDVJpegHeaderWriter.m in Sources */,
 				53920F7545374D05850EC977 /* CDVNotification.m in Sources */,
+				1DBF04C4600D42778CD82575 /* CDVVibration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
