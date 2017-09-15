@@ -46,25 +46,24 @@ var app = {
                    if(row.isDirectory){
                          // We will draw the content of the clicked folder
                          html = '<li onclick="listPath('+"'"+row.nativeURL+"'"+');">'+row.name+'</li>';
+                            document.getElementById("select-demo").innerHTML += html;
                    }else{
                          // alert the path of file
                          html = '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'</li>';
+                         document.getElementById("select-demo").innerHTML += html;
                    }
 
                }
-
-                document.getElementById("select-demo").innerHTML = html;
           }
 
           function onFailCallback(e){
             alert(e);
           }
         }
-
         function getFilepath(thefilepath){
                 alert(thefilepath);
         }
-        listPath('file:///storage/emulated/0');
+        listPath(cordova.file.externalRootDirectory);
     },
 
     // Update DOM on a Received Event
