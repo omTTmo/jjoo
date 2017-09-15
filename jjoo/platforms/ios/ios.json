@@ -19,6 +19,10 @@
                         {
                             "xml": "<preference name=\"CameraUsesGeolocation\" value=\"false\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -60,6 +64,9 @@
         "cordova-plugin-camera": {
             "CAMERA_USAGE_DESCRIPTION": "Take pictures",
             "PHOTOLIBRARY_USAGE_DESCRIPTION": "Save to custom folders",
+            "PACKAGE_NAME": "com.unfu.jjoo"
+        },
+        "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.unfu.jjoo"
         }
     },
@@ -269,12 +276,21 @@
             "clobbers": [
                 "CameraPopoverHandle"
             ]
+        },
+        {
+            "id": "cordova-plugin-dialogs.notification",
+            "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+            "pluginId": "cordova-plugin-dialogs",
+            "merges": [
+                "navigator.notification"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.3.2",
         "cordova-plugin-compat": "1.1.0",
         "cordova-plugin-file": "4.3.3",
-        "cordova-plugin-camera": "2.4.1"
+        "cordova-plugin-camera": "2.4.1",
+        "cordova-plugin-dialogs": "1.3.3"
     }
 }

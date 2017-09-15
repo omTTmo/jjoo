@@ -82,6 +82,32 @@ body {
     margin: 4px 2px;
     cursor: pointer;
 }
+#yes, #no {
+    margin: 0 auto;
+    padding:14px;
+    width:48%;
+}
+#select-demo li {
+    text-align: left;
+    list-style: none;
+    font-size: 18px;
+    margin:10px;
+}
+.select {
+    left: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+#con .select span {
+    color:red;
+    margin:0 auto;
+}
+.hidden {
+    display: none;
+}
+.visible {
+    display: block;
+}
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {

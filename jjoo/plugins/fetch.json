@@ -33,5 +33,13 @@
             "CAMERA_USAGE_DESCRIPTION": "Take pictures",
             "PHOTOLIBRARY_USAGE_DESCRIPTION": "Save to custom folders"
         }
+    },
+    "cordova-plugin-dialogs": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-dialogs"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

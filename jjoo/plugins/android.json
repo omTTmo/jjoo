@@ -15,6 +15,9 @@
         },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.unfu.jjoo"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.unfu.jjoo"
         }
     },
     "dependent_plugins": {

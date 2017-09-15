@@ -29,9 +29,10 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
         document.getElementById('takePicture').addEventListener("click",app.takeImage);
-        /**
-         * This function will draw the given path.
-         */
+        document.getElementById('browse').addEventListener("click",app.browseFolder);
+    },
+    browseFolder: function() {
+         var path = cordova.file.externalRootDirectory;
         function listPath(myPath){
           window.resolveLocalFileSystemURL(myPath, function (dirEntry) {
                var directoryReader = dirEntry.createReader();
@@ -39,33 +40,52 @@ var app = {
           });
 
           function onSuccessCallback(entries){
-            // alert(JSON.stringify(entries,null,4));
-               for (i=0; i<entries.length; i++) {
+            var el = document.getElementById("select-demo");
+            el.style.display = 'block';
+                var html = '';
+                for (i=0; i<entries.length; i++) {
                    var row = entries[i];
-                   var html = '';
-                   if(row.isDirectory){
-                         // We will draw the content of the clicked folder
-                         html = '<li onclick="listPath('+"'"+row.nativeURL+"'"+');">'+row.name+'</li>';
-                            document.getElementById("select-demo").innerHTML += html;
-                   }else{
-                         // alert the path of file
-                         html = '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'</li>';
-                         document.getElementById("select-demo").innerHTML += html;
-                   }
+                   if(row.isDirectory && row.name.indexOf('.')){
+                        // We will draw the content of the clicked folder
+                        html += '<li class="folder" id="'+row.name+'">'+row.name+'</li>';
+                        // document.getElementById("select-demo").innerHTML += html;
 
-               }
+                   }
+                } //end for
+                el.innerHTML = html;
+                var lists = document.getElementsByClassName('folder');
+                for (var i = 0; i < lists.length; i++) {
+                    var children = lists[i].addEventListener('click', function(){
+                        var getSave = localStorage.getItem("saveFolder");
+                        if ( getSave == undefined || getSave == null) {
+                            localStorage.setItem( "saveFolder",this.getAttribute('id') );
+                            alert("Saving in: " + localStorage.getItem("saveFolder") );
+                            el.style.display = 'none';
+                        }else{
+                            navigator.notification.confirm(getSave, app.onConfirm, "Currently saving in:", ['Select new folder', 'Cancel']);
+                            // el.innerHTML = '<p class="select">Currently saving in:<br><span>"' + getSave + '"</span><br> Change?</p><br><div class="content"><button id="yes" class="button choose">Yes</button></div>';
+                        }
+                    })
+                } //end for
           }
 
           function onFailCallback(e){
             alert(e);
           }
         }
+
         function getFilepath(thefilepath){
                 alert(thefilepath);
         }
-        listPath(cordova.file.externalRootDirectory);
+        listPath(path);
     },
-
+    onConfirm: function(button) {
+        if(button == 1) {
+            localStorage.removeItem('saveFolder');
+        }else{
+            document.getElementById("select-demo").style.display = 'none';
+        }
+    },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -96,7 +116,7 @@ var app = {
             n = d.getTime(),
             newFileName = n + "jjoo.jpg";
 
-        var folderName = "jjoo";
+        var folderName = localStorage.getItem("saveFolder");
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
             fileSys.root.getDirectory(folderName, {create:true, exclusive: false},
             function(directory) {
