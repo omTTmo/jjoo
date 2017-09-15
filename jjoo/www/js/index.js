@@ -29,6 +29,40 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
         document.getElementById('takePicture').addEventListener("click",app.takeImage);
+        /**
+         * This function will draw the given path.
+         */
+        function listPath(myPath){
+          window.resolveLocalFileSystemURL(myPath, function (dirEntry) {
+               var directoryReader = dirEntry.createReader();
+               directoryReader.readEntries(onSuccessCallback,onFailCallback);
+          });
+
+          function onSuccessCallback(entries){
+               for (i=0; i<entries.length; i++) {
+                   var row = entries[i];
+                   var html = '';
+                   if(row.isDirectory){
+                         // We will draw the content of the clicked folder
+                         html = '<li onclick="listPath('+"'"+row.nativeURL+"'"+');">'+row.name+'</li>';
+                   }else{
+                         // alert the path of file
+                         html = '<li onclick="getFilepath('+"'"+row.nativeURL+"'"+');">'+row.name+'</li>';
+                   }
+
+               }
+
+                document.getElementById("select-demo").innerHTML = html;
+          }
+
+          function onFailCallback(e){
+            alert(e);
+          }
+        };
+
+        function getFilepath(thefilepath){
+                alert(thefilepath);
+        };
     },
 
     // Update DOM on a Received Event
@@ -48,7 +82,7 @@ var app = {
         });
     },
     onSuccess: function(imageData) {
-        //imageData = file:///storage/emulated/0/Android/data/com.adobe.phonegap.app/cache/123xxxxx.jpg        
+        //imageData = file:///storage/emulated/0/Android/data/com.adobe.phonegap.app/cache/123xxxxx.jpg
         window.resolveLocalFileSystemURL(imageData, app.resolveOnSuccess, app.resolveOnError);
     },
 
@@ -56,13 +90,13 @@ var app = {
         alert('Failed because: ' + message);
     },
     resolveOnSuccess: function(entry){
-        //entry = {file: true, isDirectory:false, name:123xx.jpg, fullPath:/123xxx.jpg, filesyste: cache-external}        
+        //entry = {file: true, isDirectory:false, name:123xx.jpg, fullPath:/123xxx.jpg, filesyste: cache-external}
         var d = new Date(),
             n = d.getTime(),
             newFileName = n + "jjoo.jpg";
 
-        var folderName = "jjoo";        
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {            
+        var folderName = "jjoo";
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
             fileSys.root.getDirectory(folderName, {create:true, exclusive: false},
             function(directory) {
                 entry.moveTo(directory, newFileName,  app.successMove, app.resolveOnError);
@@ -72,8 +106,8 @@ var app = {
 
     },
 
-    successMove: function(imageData){        
-    ///Do what you want with imageData.nativeURL    
+    successMove: function(imageData){
+    ///Do what you want with imageData.nativeURL
     alert(imageData.nativeURL);
     },
 
