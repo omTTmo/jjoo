@@ -134,7 +134,7 @@ var app = {
 
     successMove: function(imageData){
     ///Do what you want with imageData.nativeURL
-    alert(imageData.nativeURL);
+    // alert(imageData.nativeURL);
     },
 
     resolveOnError: function(error){
