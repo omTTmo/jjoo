@@ -33,8 +33,8 @@ var app = {
         document.getElementById('private').addEventListener("click",app.setFolderQuick);
         localStorage.setItem("saveFolder", 'jjoo');
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys) {
-            fileSys.root.getDirectory("jjoo", {create:true, exclusive: false},app.resolveOnError)
-        };
+            fileSys.root.getDirectory("jjoo", {create:true, exclusive: false},app.successMove,app.resolveOnError);
+        });
     },
     browseFolder: function() {
          var path = cordova.file.externalRootDirectory;
